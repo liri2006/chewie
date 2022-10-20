@@ -73,11 +73,9 @@ class ChewieState extends State<Chewie> {
       _isFullScreen = isControllerFullScreen;
       await _pushFullScreenWidget(context);
     } else if (_isFullScreen) {
-      final navigator = widget.controller.fullScreenNavigator ??
-          Navigator.of(
-            context,
-            rootNavigator: widget.controller.useRootNavigator,
-          );
+      final navigator = Navigator.of(
+        context,
+      );
 
       navigator.pop();
       _isFullScreen = false;
